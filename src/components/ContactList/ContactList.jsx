@@ -5,7 +5,6 @@ import { deleteContact } from "../../redux/contactsSlice";
 
 export default function ContactList() {
   const contacts = useSelector((state) => state.contacts.items);
-  console.log(contacts);
   const filter = useSelector((state) => state.filters.name);
   const dispatch = useDispatch();
   const handleDelete = (id) => {

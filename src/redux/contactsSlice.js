@@ -1,5 +1,3 @@
-// редьюсери addContact та deleteContact
-// функцію-селектор selectContacts
 import { createSlice } from "@reduxjs/toolkit";
 
 const slice = createSlice({
@@ -14,7 +12,6 @@ const slice = createSlice({
   },
   reducers: {
     addContact: (state, action) => {
-      // state.items =[...state.contacts.items, action.payload];
       state.items.push(action.payload);
     },
     deleteContact: (state, action) => {
