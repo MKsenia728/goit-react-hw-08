@@ -4,9 +4,9 @@ import * as Yup from "yup";
 import { ErrorMessage } from "formik";
 import css from "./ContactForm.module.css";
 import { useDispatch } from "react-redux";
-import { addContact } from "../../redux/contactsOps";
+import { addContact } from "../../redux/contacts/operations";
 
-export default function ContactForm() {
+export default function ContactForm({ message }) {
   const nameFieldId = useId();
   const telFieldId = useId();
   const dispatch = useDispatch();
@@ -23,6 +23,7 @@ export default function ContactForm() {
 
   const handleSubmit = (values, form) => {
     dispatch(addContact(values));
+    message("Add contact");
     form.resetForm();
   };
 
